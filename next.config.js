@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    distDir: 'docs',
+    distDir: 'out',
     output: 'export',
     basePath: "/n46-blog-archive",
 }
