@@ -27,7 +27,7 @@ export default function Home() {
     }
 
     useEffect(() => {
-        fetch('https://iamcristye.github.io/hayakawa-seira-blog-archive/result.json')
+        fetch('/hayakawa-seira-blog-archive/result.json')
             .then((res) => res.json())
             .then((data) => {
                 setData(data)
