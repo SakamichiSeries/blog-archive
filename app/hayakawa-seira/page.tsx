@@ -24,6 +24,7 @@ export default function Home() {
     const setIndex = (x: number) => {
         console.log("currentIndex", x)
         setCurrentIndex(x)
+        window.location.hash = (data.blog.length - x).toString()
     }
 
     useEffect(() => {
@@ -32,6 +33,9 @@ export default function Home() {
             .then((data) => {
                 setData(data)
                 setLoading(false)
+                if (!isNaN(parseInt(window.location.hash.replace("#", "")))) {
+                    setCurrentIndex(data.blog.length - parseInt(window.location.hash.replace("#", "")))
+                }
             })
     }, [])
 
