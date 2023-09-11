@@ -17,7 +17,7 @@ export default function Home() {
     const scrollBlogTop = () => {
         if (blog_main.current !== null) {
             // Now TypeScript knows that myRef.current is not null
-            console.log(blog_main.current.scroll({ top: 0 }));
+            blog_main.current.scroll({ top: 0 })
         }
     }
 
@@ -35,7 +35,7 @@ export default function Home() {
             })
     }, [])
 
-    if (isLoading || blog_main.current !== null) return (
+    if (isLoading) return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
             Loading
         </main>
