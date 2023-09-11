@@ -8,7 +8,7 @@ import { useRef } from 'react';
 export default function Home() {
     const [data, setData] = useState<any>({})
     const [isLoading, setLoading] = useState(true)
-    const [isNavOpen, setNavOpen] = useState(false);
+    const [isNavOpen, setNavOpen] = useState(true);
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const blog_main = useRef<HTMLDivElement>(null);
@@ -22,7 +22,7 @@ export default function Home() {
     }
 
     const setIndex = (x: number) => {
-        console.log("currentIndex", x)
+        // console.log("currentIndex", x)
         setCurrentIndex(x)
         window.location.hash = (data.blog.length - x).toString()
     }
@@ -35,6 +35,7 @@ export default function Home() {
                 setLoading(false)
                 if (!isNaN(parseInt(window.location.hash.replace("#", "")))) {
                     setCurrentIndex(data.blog.length - parseInt(window.location.hash.replace("#", "")))
+                    setNavOpen(false)
                 }
             })
     }, [])
@@ -75,7 +76,7 @@ export default function Home() {
                         </div>
                     )}
                 </div>
-                <div ref={blog_main} className={(isNavOpen ? "hidden" : "") + " basis-full lg:max-w-full lg:basis-1/2 h-full overflow-auto p-8 bg-white"}>
+                <div ref={blog_main} className={(isNavOpen ? "hidden" : "") + " lg:flex flex-col basis-full lg:max-w-full lg:basis-1/2 h-full overflow-auto p-8 bg-white"}>
                     <div>
                         <div className="font-semibold py-3 pt-12 lg:pt-2 text-4xl text-purple-900">
                             {data.blog[currentIndex].title}
