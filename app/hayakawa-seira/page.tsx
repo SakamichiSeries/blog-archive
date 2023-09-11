@@ -42,38 +42,38 @@ export default function Home() {
     )
 
     return (
-        <main className="flex min-h-screen items-center justify-between h-screen w-screen bg-purple-100 flex-wrap">
+        <main className="flex items-center justify-between lg:min-h-screen lg:h-screen w-screen bg-purple-100 flex-wrap">
             {/* <div className='w-full h-24 p-9 bg-white font-semibold flex-grow flex-shrink basis-1'>
         Unofficial mirror of {data.member_name_romaji.toUpperCase()}'s blog
       </div> */}
 
-            <nav className={"max-lg:flex hidden h-0 bg-white w-full min-w-full max-w-full fixed top-0"}>
+            <nav className={"flex lg:hidden h-0 bg-white w-full min-w-full max-w-full fixed top-0"}>
                 {/* https://www.codementor.io/@giorgiasambrotta/hamburger-menu-with-react-and-tailwind-css-1qx6sruvua */}
                 <div
-                    className="menu-icon space-y-2 p-6 ml-auto mr-0 max-w-xs"
+                    className="menu-icon space-y-1.5 p-6 ml-auto mr-0 max-w-xs"
                     onClick={() => setNavOpen((prev) => !prev)} // toggle isNavOpen state on click
                 >
-                    <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                    <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                    <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                    <span className="block h-0.5 w-6 bg-gray-600"></span>
+                    <span className="block h-0.5 w-6 bg-gray-600"></span>
+                    <span className="block h-0.5 w-6 bg-gray-600"></span>
                 </div>
             </nav>
-            <div className='flex flex-wrap flex-row w-full h-full'>
-                <div className={(isNavOpen ? "basis-3/5" : "max-lg:hidden") + " flex flex-col lg:basis-1/3 overflow-auto h-full p-6 max-lg:p-1 divide-y divide-gray-300"}>
+            <div className='flex flex-wrap flex-row w-full lg:h-full'>
+                <div className={(isNavOpen ? "basis-3/5" : "hidden") + " max-h-[90vh] lg:max-h-full lg:flex flex-col lg:basis-1/3 overflow-auto lg:h-full p-1 lg:p-6 divide-y divide-gray-300"}>
                     {data.blog.map((blog: any, index: number) =>
                         <div className='px-1 py-2' key={index} onClick={() => { setIndex(index); setNavOpen(false); scrollBlogTop(); }}>
                             <div className="hover:bg-white hover:cursor-pointer rounded-3xl">
-                                <div className='p-3 pb-0'>{blog.title}</div>
-                                <div className='p-3 pt-0 text-gray-600'>{blog.time}</div>
+                                <div className='p-2 pb-0'>{blog.title}</div>
+                                <div className='p-2 pt-0 text-gray-600'>{blog.time}</div>
                             </div>
 
                             {/* <hr></hr> */}
                         </div>
                     )}
                 </div>
-                <div ref={blog_main} className={(isNavOpen ? "max-lg:hidden" : "") + " max-lg:basis-full max-lg:max-w-full lg:basis-1/2 h-full overflow-auto p-6 bg-white"}>
+                <div ref={blog_main} className={(isNavOpen ? "hidden" : "") + " basis-full lg:max-w-full lg:basis-1/2 h-full overflow-auto p-8 bg-white"}>
                     <div>
-                        <div className="font-semibold py-3 max-lg:pt-12 text-4xl text-purple-900">
+                        <div className="font-semibold py-3 pt-12 lg:pt-2 text-4xl text-purple-900">
                             {data.blog[currentIndex].title}
                         </div>
                         <div className='font-light pb-12 text-gray-600'>
@@ -89,7 +89,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className={(isNavOpen ? "basis-2/5" : "max-lg:hidden") + " lg:flex lg:basis-1/6 max-lg:pt-24 p-9 max-lg:p-4 flex-col h-screen overflow-y-auto"}>
+                <div className={(isNavOpen ? "basis-2/5" : "hidden") + " lg:flex lg:basis-1/6 pt-24 lg:pt-9 p-4 lg:p-9 flex-col overflow-y-auto"}>
                     <div className='min-h-fit p-1'>
                         {/* <Image alt={data.member_name} src={data.profile_pic} fill={true} style={{
                             objectFit: 'contain',
@@ -128,7 +128,7 @@ export default function Home() {
                     <br></br>
                     <br></br>
 
-                    <div className='p-1 flex-1'>
+                    <div className='p-1 flex-1 text-xs'>
                         <span className=''>
                             This site is an unofficial mirror of {data.member_name_romaji.toUpperCase()}&apos;s blog.
                         </span>
