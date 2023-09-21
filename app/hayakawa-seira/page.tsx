@@ -21,10 +21,55 @@ export default function Home() {
         }
     }
 
-    const setIndex = (x: number) => {
-        // console.log("currentIndex", x)
-        setCurrentIndex(x)
-        window.location.hash = (data.blog.length - x).toString()
+    // for #0, show contents on mobile and latest blog on desktop
+    const updateHash = (x: string) => {
+        // console.log("setHash", x)
+
+        let hash: number
+
+        if (isNaN(parseInt(x.replace("#", "")))                     // #abc
+            || (parseInt(x.replace("#", "")) < 0)                   // #-4.6
+            || (parseInt(x.replace("#", "")) > data.blog.length))   // #20110821
+        {
+            hash = 0           // show contents on mobile and latest blog on desktop
+        }
+        else {
+            hash = parseInt(x.replace("#", ""))
+        }
+
+        if (hash == 0) {       // show contents on mobile and latest blog on desktop
+            // console.log("show contents on mobile and latest blog on desktop")
+            setNavOpen(true)
+            document.title = `${data.member_name_kanji}ブログ`
+            if (window.location.hash.replace("#", "") != "0") {
+                window.location.hash = "0"
+            }
+        }
+        else {
+            let index: number
+            index = data.blog.length - parseInt(x.replace("#", ""))
+            setCurrentIndex(index)
+            setNavOpen(false)
+            document.title = `${data.blog[index].title} - ${data.member_name_kanji}ブログ`
+            if (window.location.hash.replace("#", "") != (data.blog.length - index).toString()) {
+                window.location.hash = (data.blog.length - index).toString()
+            }
+        }
+    }
+
+    const switchNav = () => {
+        const x = window.location.hash
+
+        if (isNaN(parseInt(x.replace("#", "")))                     // #abc
+            || (parseInt(x.replace("#", "")) < 0)                   // #-4.6
+            || (parseInt(x.replace("#", "")) > data.blog.length)    // #20110821
+            || (parseInt(x.replace("#", "")) == 0))                 // nav currently open
+        {
+            updateHash((data.blog.length - currentIndex).toString())
+        }
+        else {
+            updateHash("0")
+        }
     }
 
     useEffect(() => {
@@ -32,13 +77,21 @@ export default function Home() {
             .then((res) => res.json())
             .then((data) => {
                 setData(data)
-                setLoading(false)
-                if (!isNaN(parseInt(window.location.hash.replace("#", "")))) {
-                    setCurrentIndex(data.blog.length - parseInt(window.location.hash.replace("#", "")))
-                    setNavOpen(false)
-                }
             })
     }, [])
+
+    useEffect(() => {
+        if (data.blog) {
+            setLoading(false)
+            // console.log(data.blog)
+            updateHash(window.location.hash)
+
+            // for handling back button
+            window.addEventListener("hashchange", e => {
+                updateHash(window.location.hash)
+            });
+        }
+    }, [data])
 
     if (isLoading) return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -56,7 +109,7 @@ export default function Home() {
                 {/* https://www.codementor.io/@giorgiasambrotta/hamburger-menu-with-react-and-tailwind-css-1qx6sruvua */}
                 <div
                     className="menu-icon space-y-1.5 p-6 ml-auto mr-0 max-w-xs"
-                    onClick={() => setNavOpen((prev) => !prev)} // toggle isNavOpen state on click
+                    onClick={() => { switchNav() }}
                 >
                     <span className="block h-0.5 w-6 bg-gray-600"></span>
                     <span className="block h-0.5 w-6 bg-gray-600"></span>
@@ -66,7 +119,7 @@ export default function Home() {
             <div className='flex flex-wrap flex-row w-full lg:h-full'>
                 <div className={(isNavOpen ? "basis-3/5" : "hidden") + " max-h-[90vh] lg:max-h-full lg:flex flex-col lg:basis-1/3 overflow-auto lg:h-full p-1 lg:p-6 divide-y divide-gray-300"}>
                     {data.blog.map((blog: any, index: number) =>
-                        <div className='px-1 py-2' key={index} onClick={() => { setIndex(index); setNavOpen(false); scrollBlogTop(); }}>
+                        <div className='px-1 py-2' key={index} onClick={() => { updateHash((data.blog.length - index).toString()); scrollBlogTop(); }}>
                             <div className="hover:bg-white hover:cursor-pointer rounded-3xl">
                                 <div className='p-2 pb-0'>{blog.title}</div>
                                 <div className='p-2 pt-0 text-gray-600'>{blog.time}</div>
@@ -101,7 +154,7 @@ export default function Home() {
                         }}>
 
                         </Image> */}
-                        <img alt={data.member_name} src={data.profile_pic} className='max-h-48'></img>
+                        <img alt={data.member_name_kanji} src={data.profile_pic} className='max-h-48'></img>
                     </div>
                     <div className='p-1 pt-3 font-semibold text-purple-900 text-2xl'>{data.member_name_kanji}</div>
                     {/* <div className='p-1'>
