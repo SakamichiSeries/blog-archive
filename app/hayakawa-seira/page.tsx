@@ -74,7 +74,15 @@ export default function Home() {
 
     useEffect(() => {
         const member_name_romaji = window.location.pathname.split('/').filter(Boolean).pop()
-        fetch(`/${member_name_romaji}-blog-archive/result.json`)
+        let dataLink: string
+        if (document.location.hostname == "localhost") {
+            dataLink = `https://iamCristYe.GitHub.io/${member_name_romaji}-blog-archive/result.json`
+        }
+        else {
+            dataLink = `/${member_name_romaji}-blog-archive/result.json`
+        }
+
+        fetch(dataLink)
             .then((res) => res.json())
             .then((data) => {
                 setData(data)
@@ -106,7 +114,7 @@ export default function Home() {
         Unofficial mirror of {data.member_name_romaji.toUpperCase()}'s blog
       </div> */}
 
-            <nav className={"flex lg:hidden h-0 bg-white w-full min-w-full max-w-full fixed top-0"}>
+            <nav className={"flex lg:hidden h-0 bg-white w-full min-w-full max-w-full z-[46]"}>
                 {/* https://www.codementor.io/@giorgiasambrotta/hamburger-menu-with-react-and-tailwind-css-1qx6sruvua */}
                 <div
                     className="menu-icon space-y-1.5 p-6 ml-auto mr-0 max-w-xs"
@@ -195,10 +203,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-
-
-
-
         </main>
     )
 }
