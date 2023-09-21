@@ -73,7 +73,7 @@ export default function Home() {
     }
 
     useEffect(() => {
-        const member_name_romaji = window.location.href.slice(window.location.href.lastIndexOf('/') + 1)
+        const member_name_romaji = window.location.pathname.split('/').filter(Boolean).pop()
         fetch(`/${member_name_romaji}-blog-archive/result.json`)
             .then((res) => res.json())
             .then((data) => {
