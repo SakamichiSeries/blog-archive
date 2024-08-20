@@ -76,7 +76,7 @@ export default function Home() {
         const member_name_romaji = window.location.pathname.split('/').filter(Boolean).pop()
         let dataLink: string
         if (document.location.hostname == "localhost") {
-            dataLink = `https://iamCristYe.GitHub.io/${member_name_romaji}-blog-archive/result.json`
+            dataLink = `https://SakamichiSeries.GitHub.io/${member_name_romaji}-blog-archive/result.json`
         }
         else {
             dataLink = `/${member_name_romaji}-blog-archive/result.json`
