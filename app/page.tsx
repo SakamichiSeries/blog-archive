@@ -8,6 +8,11 @@ export default function Home() {
         "Yamashita Mizuki",
         "Hayakawa Seira",
         "Kitagawa Yuri",
+        "gokisei",
+        "shinyonkisei",
+        "yonkisei",
+        "sankisei",
+        "staff",
     ];
 
     const generateUrl = (name: String) => {
