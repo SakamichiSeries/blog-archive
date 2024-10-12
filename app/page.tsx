@@ -2,6 +2,7 @@
 
 export default function Home() {
     const members = [
+        "REI OZONO",
         "Kakehashi Sayaka",
         "Seimiya Rei",
         "Sakaguchi Tamami",
