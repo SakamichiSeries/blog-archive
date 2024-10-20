@@ -181,7 +181,7 @@ export default function Home() {
 
                     <div className='p-1'>
                         <span>
-                            {Object.keys(data.SNS).map((keyname) =>
+                            {data.hasOwnProperty('SNS') && Object.keys(data.SNS).map((keyname) =>
                                 <a key={keyname} href={data.SNS[keyname]}>
                                     {keyname}
                                 </a>
