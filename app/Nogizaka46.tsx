@@ -166,21 +166,20 @@ export default function Home() {
                         <img alt={data.member_name_kanji} src={data.profile_pic} className='max-h-48'></img>
                     </div>
                     <div className='p-1 pt-3 font-semibold text-purple-900 text-2xl'>{data.member_name_kanji}</div>
-                    {/* <div className='p-1'>
-                        {data.member_name_kana}</div>
-                    <div className='p-1'>
-                        {data.member_name_romaji}</div> */}
-                    <div className='p-1'>
-                        {data.生年月日}</div>
-                    <div className='p-1'>
-                        {data.血液型}</div>
-                    <div className='p-1'>
-                        {data.星座}
-                    </div>
-                    <div className='p-1'>
-                        {data.身長}</div>
-                    <div className='p-1'>
+                    {/* {data.hasOwnProperty('member_name_kana') && <div className='p-1'>
+                        {data.member_name_kana}</div>}
+                    {data.hasOwnProperty('member_name_romaji') && <div className='p-1'>
+                        {data.member_name_romaji}</div>} */}
+                    {data.hasOwnProperty('生年月日') && <div className='p-1'>
+                        {data.生年月日}</div>}
+                    {data.hasOwnProperty('血液型') && <div className='p-1'>
+                        {data.血液型}</div>}
+                    {data.hasOwnProperty('星座') && <div className='p-1'>
+                        {data.星座}</div>}
+                    {data.hasOwnProperty('身長') && <div className='p-1'>
+                        {data.身長}</div>}
 
+                    <div className='p-1'>
                         <span>
                             {Object.keys(data.SNS).map((keyname) =>
                                 <a key={keyname} href={data.SNS[keyname]}>
@@ -188,8 +187,6 @@ export default function Home() {
                                 </a>
                             )}
                         </span>
-
-
                     </div>
 
                     <br></br>
