@@ -30,7 +30,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8' # Specify the Python version you need
+      - name: Create member pages
+        run: python3 member_pages.py
       - name: Detect package manager
         id: detect-package-manager
         run: |

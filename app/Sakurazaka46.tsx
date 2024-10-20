@@ -109,7 +109,7 @@ export default function Home() {
     )
 
     return (
-        <main className="flex items-center justify-between lg:min-h-screen lg:h-screen w-screen bg-purple-100 flex-wrap">
+        <main className="flex items-center justify-between lg:min-h-screen lg:h-screen w-screen bg-pink-100 flex-wrap">
             {/* <div className='w-full h-24 p-9 bg-white font-semibold flex-grow flex-shrink basis-1'>
         Unofficial mirror of {data.member_name_romaji.toUpperCase()}'s blog
       </div> */}
@@ -140,7 +140,7 @@ export default function Home() {
                 </div>
                 <div ref={blog_main} className={(isNavOpen ? "hidden" : "") + " lg:flex flex-col basis-full lg:max-w-full lg:basis-1/2 h-full overflow-auto p-8 bg-white"}>
                     <div>
-                        <div className="font-semibold py-3 pt-12 lg:pt-2 text-4xl text-purple-900">
+                        <div className="font-semibold py-3 pt-12 lg:pt-2 text-4xl text-pink-900">
                             {data.blog[currentIndex].title}
                         </div>
                         <div className='font-light pb-12 text-gray-600'>
@@ -165,7 +165,7 @@ export default function Home() {
                         </Image> */}
                         <img alt={data.member_name_kanji} src={data.profile_pic} className='max-h-48'></img>
                     </div>
-                    <div className='p-1 pt-3 font-semibold text-purple-900 text-2xl'>{data.member_name_kanji}</div>
+                    <div className='p-1 pt-3 font-semibold text-pink-900 text-2xl'>{data.member_name_kanji}</div>
                     {/* <div className='p-1'>
                         {data.member_name_kana}</div>
                     <div className='p-1'>
