@@ -49,6 +49,12 @@ export default function Home() {
                 >
                     五期生<br></br>
                 </a>
+                <a
+                    href="./rokisei"
+                    className="text-purple-600 hover:text-purple-800 font-semibold"
+                >
+                    六期生<br></br>
+                </a>
                 {members["NG"].map((member_entry, index) => (
                     <a
                         key={index}
