@@ -48,6 +48,9 @@ with open("members.json") as f:
         name = member[1].lower().replace(" ", "-")
         os.makedirs("app/" + name, exist_ok=True)
         subprocess.run(["cp", "app/Hinatazaka46.tsx", "app/" + name + "/page.tsx"])
+    name = "hinatazaka46-gokisei"
+    os.makedirs("app/" + name, exist_ok=True)
+    subprocess.run(["cp", "app/Hinatazaka46.tsx", "app/" + name + "/page.tsx"])
     name = "poka"
     os.makedirs("app/" + name, exist_ok=True)
     subprocess.run(["cp", "app/Hinatazaka46.tsx", "app/" + name + "/page.tsx"])

@@ -110,6 +110,12 @@ export default function Home() {
                     </a>
                 ))}
                 <a
+                    href="./hinatazaka46-gokisei"
+                    className="text-blue-600 hover:text-blue-800 font-semibold"
+                >
+                    五期生<br></br>
+                </a>
+                <a
                     href="./poka"
                     className="text-blue-600 hover:text-blue-800 font-semibold"
                 >
