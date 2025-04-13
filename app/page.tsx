@@ -8,130 +8,174 @@ export default function Home() {
     return (
         <main className="flex flex-col items-start space-y-2 p-12 bg-gray-100 rounded-lg shadow-md m-auto">
             <div className="text-4xl text-purple-800">乃木坂46 Nogizaka46</div>
-            <div className="">
-                {members["N"].map((member_entry, index) => (
-                    <a
-                        key={index}
-                        href={generateUrl(member_entry[1])}
-                        className="text-purple-600 hover:text-purple-800 font-semibold"
-                    >
-                        {member_entry[0]} ({member_entry[1]})
-                        <br></br>
-                    </a>
-                ))}
-                <a
-                    href="./staff"
-                    className="text-purple-600 hover:text-purple-800 font-semibold"
-                >
-                    Staff<br></br>
-                </a>
-                <a
-                    href="./sankisei"
-                    className="text-purple-600 hover:text-purple-800 font-semibold"
-                >
-                    三期生<br></br>
-                </a>
-                <a
-                    href="./yonkisei"
-                    className="text-purple-600 hover:text-purple-800 font-semibold"
-                >
-                    四期生<br></br>
-                </a>
-                <a
-                    href="./shinyonkisei"
-                    className="text-purple-600 hover:text-purple-800 font-semibold"
-                >
-                    新四期生<br></br>
-                </a>
-                <a
-                    href="./gokisei"
-                    className="text-purple-600 hover:text-purple-800 font-semibold"
-                >
-                    五期生<br></br>
-                </a>
-                <a
-                    href="./rokisei"
-                    className="text-purple-600 hover:text-purple-800 font-semibold"
-                >
-                    六期生<br></br>
-                </a>
-                {members["NG"].map((member_entry, index) => (
-                    <a
-                        key={index}
-                        href={generateUrl(member_entry[1])}
-                        className="text-gray-600 hover:text-gray-800 font-semibold"
-                    >
-                        {member_entry[0]} ({member_entry[1]})
-                        <br></br>
-                    </a>
-                ))}
-                <a
-                    href="https://janelin612.github.io/n46-crawler/"
-                    className="text-gray-600 hover:text-gray-800 font-semibold"
-                >
-                    Before 2024<br></br>
-                </a>
-            </div>
+            <a href="./staff" className="text-purple-600 hover:text-purple-800 font-semibold">
+                Staff<br />
+            </a>
 
-            <div className="text-4xl text-pink-300">櫻坂46/欅坂46 Sakurazaka46/Keyakizaka46</div>
-            <div className="">
-                {members["S"].map((member_entry, index) => (
-                    <a
-                        key={index}
-                        href={generateUrl(member_entry[1])}
-                        className="text-pink-300 hover:text-pink-500 font-semibold"
-                    >
-                        {member_entry[0]} ({member_entry[1]})
-                        <br></br>
-                    </a>
+            <details>
+                <summary className="text-2xl text-purple-800">1期生</summary>
+                {members["N1"].map((member_entry, index) => (
+                    <div key={index}>
+                        <a
+                            href={generateUrl(member_entry.romaji)}
+                            className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-purple-600 hover:text-purple-800'}`}
+                        >
+                            {member_entry.name} ({member_entry.romaji})
+                            <br />
+                        </a>
+                    </div>
                 ))}
-                {members["SG"].map((member_entry, index) => (
-                    <a
-                        key={index}
-                        href={generateUrl(member_entry[1])}
-                        className="text-gray-600 hover:text-gray-800 font-semibold"
-                    >
-                        {member_entry[0]} ({member_entry[1]})
-                        <br></br>
-                    </a>
-                ))}
-            </div>
+            </details>
 
-            <div className="text-4xl text-blue-800">日向坂46/けやき坂46 Hinatazaka46/Hiragana Keyakizaka46</div>
-            <div className="">
-                {members["H"].map((member_entry, index) => (
-                    <a
-                        key={index}
-                        href={generateUrl(member_entry[1])}
-                        className="text-blue-600 hover:text-blue-800 font-semibold"
-                    >
-                        {member_entry[0]} ({member_entry[1]})
-                        <br></br>
+            <details>
+                <summary className="text-2xl text-purple-800">2期生</summary>
+                {members["N2"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-purple-600 hover:text-purple-800'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
                     </a>
                 ))}
-                <a
-                    href="./hinatazaka46-gokisei"
-                    className="text-blue-600 hover:text-blue-800 font-semibold"
-                >
-                    五期生<br></br>
-                </a>
-                <a
-                    href="./poka"
-                    className="text-blue-600 hover:text-blue-800 font-semibold"
-                >
-                    ポカ<br></br>
-                </a>
-                {members["HG"].map((member_entry, index) => (
-                    <a
-                        key={index}
-                        href={generateUrl(member_entry[1])}
-                        className="text-gray-600 hover:text-gray-800 font-semibold"
-                    >
-                        {member_entry[0]} ({member_entry[1]})
-                        <br></br>
+            </details>
+
+            <details>
+                <summary className="text-2xl text-purple-800">3期生</summary>
+                {members["N3"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-purple-600 hover:text-purple-800'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
                     </a>
                 ))}
-            </div>
+                <a href="./sankisei" className="text-purple-600 hover:text-purple-800 font-semibold">3期生リレー<br /></a>
+            </details>
+
+
+
+            <details>
+                <summary className="text-2xl text-purple-800">4期生</summary>
+                {members["N4"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-purple-600 hover:text-purple-800'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
+                    </a>
+                ))}
+                <a href="./yonkisei" className="text-purple-600 hover:text-purple-800 font-semibold">4期生リレー<br /></a>
+                <a href="./shinyonkisei" className="text-purple-600 hover:text-purple-800 font-semibold">新4期生リレー<br /></a>
+            </details>
+
+
+
+            <details>
+                <summary className="text-2xl text-purple-800">5期生</summary>
+                {members["N5"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-purple-600 hover:text-purple-800'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
+                    </a>
+                ))}
+                <a href="./gokisei" className="text-purple-600 hover:text-purple-800 font-semibold">5期生リレー<br /></a>
+            </details>
+
+
+
+            <details>
+                <summary className="text-2xl text-purple-800">6期生</summary>
+                <a href="./rokisei" className="text-purple-600 hover:text-purple-800 font-semibold">6期生リレー<br /></a>
+                {members["N6"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-purple-600 hover:text-purple-800'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
+                    </a>
+                ))}
+            </details>
+
+
+
+            <div className="text-4xl text-pink-300">櫻坂46 Sakurazaka46</div>
+            <details>
+                <summary className="text-2xl text-pink-800">一期生</summary>
+                {members["S1"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-pink-300 hover:text-pink-500'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
+                    </a>
+                ))}
+            </details>
+
+            <details>
+                <summary className="text-2xl text-pink-800">二期生</summary>
+                {members["S2"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-pink-300 hover:text-pink-500'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
+                    </a>
+                ))}
+            </details>
+
+            <details>
+                <summary className="text-2xl text-pink-800">三期生</summary>
+                {members["S3"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-pink-300 hover:text-pink-500'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
+                    </a>
+                ))}
+            </details>
+
+            <div className="text-4xl text-blue-800">日向坂46 Hinatazaka46</div>
+            <a href="./poka" className="text-blue-600 hover:text-blue-800 font-semibold">ポカ<br /></a>
+
+            <details>
+                <summary className="text-2xl text-blue-800">一期生</summary>
+                {members["H1"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-blue-600 hover:text-blue-800'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
+                    </a>
+                ))}
+            </details>
+
+            <details>
+                <summary className="text-2xl text-blue-800">二期生</summary>
+                {members["H2"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-blue-600 hover:text-blue-800'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
+                    </a>
+                ))}
+            </details>
+
+            <details>
+                <summary className="text-2xl text-blue-800">三期生</summary>
+                {members["H3"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-blue-600 hover:text-blue-800'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
+                    </a>
+                ))}
+            </details>
+
+            <details>
+                <summary className="text-2xl text-blue-800">四期生</summary>
+                {members["H4"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-blue-600 hover:text-blue-800'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
+                    </a>
+                ))}
+            </details>
+
+
+            <details>
+                <summary className="text-2xl text-blue-800">五期生</summary>
+                <a href="./hinatazaka46-gokisei" className="text-blue-600 hover:text-blue-800 font-semibold">五期生リレー<br /></a>
+                {members["H5"].map((member_entry, index) => (
+                    <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-blue-600 hover:text-blue-800'}`}>
+                        {member_entry.name} ({member_entry.romaji})
+                        <br />
+                    </a>
+                ))}
+            </details>
         </main>
+
     );
 }

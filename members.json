@@ -600,6 +600,21 @@
       "graduated": false
     },
     {
+      "name": "大園 玲",
+      "romaji": "OZONO Rei",
+      "graduated": false
+    },
+    {
+      "name": "守屋 麗奈",
+      "romaji": "MORIYA Reina",
+      "graduated": false
+    },
+    {
+      "name": "増本 綺良",
+      "romaji": "MASUMOTO Kira",
+      "graduated": false
+    },
+    {
       "name": "関 有美子",
       "romaji": "SEKI Yumiko",
       "graduated": true
@@ -714,6 +729,21 @@
   ],
   "H1": [
     {
+      "name": "東村 芽依",
+      "romaji": "HIGASHIMURA MEI",
+      "graduated": true
+    },
+    {
+      "name": "佐々木 美玲",
+      "romaji": "SASAKI Mirei",
+      "graduated": true
+    },
+    {
+      "name": "佐々木 久美",
+      "romaji": "SASAKI Kumi",
+      "graduated": true
+    },
+    {
       "name": "高瀬 愛奈",
       "romaji": "TAKASE Mana",
       "graduated": true
@@ -756,18 +786,18 @@
   ],
   "H2": [
     {
-      "name": "宮田 愛萌",
-      "romaji": "MIYATA Manamo",
-      "graduated": true
-    },
-    {
-      "name": "渡邉 美穂",
-      "romaji": "WATANABE Miho",
+      "name": "濱岸 ひより",
+      "romaji": "HAMAGISHI Hiyori",
       "graduated": true
     },
     {
       "name": "金村 美玖",
       "romaji": "KANEMURA Miku",
+      "graduated": false
+    },
+    {
+      "name": "小坂 菜緒",
+      "romaji": "KOSAKA Nao",
       "graduated": false
     },
     {
@@ -777,13 +807,28 @@
     },
     {
       "name": "丹生 明里",
-      "romaji": "NIU Akari",
+      "romaji": "NIBU Akari",
+      "graduated": true
+    },
+    {
+      "name": "富田 鈴花",
+      "romaji": "TOMITA Suzuka",
       "graduated": false
     },
     {
-      "name": "小坂 菜緒",
-      "romaji": "KOSAKA Nao",
+      "name": "渡邉 美穂",
+      "romaji": "WATANABE Miho",
+      "graduated": true
+    },
+    {
+      "name": "松田 好花",
+      "romaji": "MATSUDA Konoka",
       "graduated": false
+    },
+    {
+      "name": "宮田 愛萌",
+      "romaji": "MIYATA Manamo",
+      "graduated": true
     }
   ],
   "H3": [
@@ -857,6 +902,11 @@
     {
       "name": "渡辺 莉奈",
       "romaji": "WATANABE Rina",
+      "graduated": false
+    },
+    {
+      "name": "岸 帆夏",
+      "romaji": "KISHI Honoka",
       "graduated": false
     }
   ],
