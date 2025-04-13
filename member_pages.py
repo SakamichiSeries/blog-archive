@@ -4,53 +4,38 @@ import subprocess
 
 with open("members.json") as f:
     members = json.load(f)
-    for member in members["N"]:
-        name = member[1].lower().replace(" ", "-")
-        os.makedirs("app/" + name, exist_ok=True)
-        subprocess.run(["cp", "app/Nogizaka46.tsx", "app/" + name + "/page.tsx"])
-    for member in members["NG"]:
-        name = member[1].lower().replace(" ", "-")
-        os.makedirs("app/" + name, exist_ok=True)
-        subprocess.run(["cp", "app/Nogizaka46.tsx", "app/" + name + "/page.tsx"])
-    name = "staff"
-    os.makedirs("app/" + name, exist_ok=True)
-    subprocess.run(["cp", "app/Nogizaka46.tsx", "app/" + name + "/page.tsx"])
-    name = "sankisei"
-    os.makedirs("app/" + name, exist_ok=True)
-    subprocess.run(["cp", "app/Nogizaka46.tsx", "app/" + name + "/page.tsx"])
-    name = "yonkisei"
-    os.makedirs("app/" + name, exist_ok=True)
-    subprocess.run(["cp", "app/Nogizaka46.tsx", "app/" + name + "/page.tsx"])
-    name = "shinyonkisei"
-    os.makedirs("app/" + name, exist_ok=True)
-    subprocess.run(["cp", "app/Nogizaka46.tsx", "app/" + name + "/page.tsx"])
-    name = "gokisei"
-    os.makedirs("app/" + name, exist_ok=True)
-    subprocess.run(["cp", "app/Nogizaka46.tsx", "app/" + name + "/page.tsx"])
-    name = "rokisei"
-    os.makedirs("app/" + name, exist_ok=True)
-    subprocess.run(["cp", "app/Nogizaka46.tsx", "app/" + name + "/page.tsx"])
 
-    for member in members["S"]:
-        name = member[1].lower().replace(" ", "-")
+    members_N = [
+        "staff",
+        "kenkyusei",
+        "sankisei",
+        "yonkisei",
+        "shinyonkisei",
+        "gokisei",
+        "rokisei",
+    ]
+    for index in ["N1", "N2", "N3", "N4", "N5", "N6"]:
+        for member in members[index]:
+            members_N.append(member["romaji"])
+    for member in members_N:
+        name = member.lower().replace(" ", "-")
         os.makedirs("app/" + name, exist_ok=True)
-        subprocess.run(["cp", "app/Sakurazaka46.tsx", "app/" + name + "/page.tsx"])
-    for member in members["SG"]:
-        name = member[1].lower().replace(" ", "-")
+        subprocess.run(["cp", "app/Nogizaka46.tsx", "app/" + name + "/page.tsx"])
+
+    members_S = []
+    for index in ["S1", "S2", "S3"]:
+        for member in members[index]:
+            members_S.append(member["romaji"])
+    for member in members_S:
+        name = member.lower().replace(" ", "-")
         os.makedirs("app/" + name, exist_ok=True)
         subprocess.run(["cp", "app/Sakurazaka46.tsx", "app/" + name + "/page.tsx"])
 
-    for member in members["H"]:
-        name = member[1].lower().replace(" ", "-")
+    members_H = ["poka", "hinatazaka46-gokisei"]
+    for index in ["H1", "H2", "H3", "H4", "H5"]:
+        for member in members[index]:
+            members_H.append(member["romaji"])
+    for member in members_H:
+        name = member.lower().replace(" ", "-")
         os.makedirs("app/" + name, exist_ok=True)
         subprocess.run(["cp", "app/Hinatazaka46.tsx", "app/" + name + "/page.tsx"])
-    for member in members["HG"]:
-        name = member[1].lower().replace(" ", "-")
-        os.makedirs("app/" + name, exist_ok=True)
-        subprocess.run(["cp", "app/Hinatazaka46.tsx", "app/" + name + "/page.tsx"])
-    name = "hinatazaka46-gokisei"
-    os.makedirs("app/" + name, exist_ok=True)
-    subprocess.run(["cp", "app/Hinatazaka46.tsx", "app/" + name + "/page.tsx"])
-    name = "poka"
-    os.makedirs("app/" + name, exist_ok=True)
-    subprocess.run(["cp", "app/Hinatazaka46.tsx", "app/" + name + "/page.tsx"])

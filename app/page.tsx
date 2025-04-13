@@ -35,6 +35,7 @@ export default function Home() {
                         <br />
                     </a>
                 ))}
+                <a href="./kenkyusei" className="text-purple-600 hover:text-purple-800 font-semibold">研究生リレー<br /></a>
             </details>
 
             <details>
