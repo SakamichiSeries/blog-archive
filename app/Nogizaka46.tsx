@@ -153,6 +153,8 @@ export default function Home() {
 
                     <div className='pt-12'>
                         <a className="underline" href={data.blog[currentIndex].url}>Original link</a>
+                        <br></br>
+                        <a className="underline" href={"https://web.archive.org/web/0/" + data.blog[currentIndex].url}>Original link archive</a>
                     </div>
                 </div>
 
