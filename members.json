@@ -727,6 +727,53 @@
       "graduated": false
     }
   ],
+  "S4": [
+    {
+      "name": "浅井 恋乃未",
+      "romaji": "ASAI Konomi",
+      "graduated": false
+    },
+    {
+      "name": "稲熊 ひな",
+      "romaji": "INAGUMA Hina",
+      "graduated": false
+    },
+    {
+      "name": "勝又 春",
+      "romaji": "KATSUMATA Haru",
+      "graduated": false
+    },
+    {
+      "name": "佐藤 愛桜",
+      "romaji": "SATO Neo",
+      "graduated": false
+    },
+    {
+      "name": "中川 智尋",
+      "romaji": "NAKAGAWA Chihiro",
+      "graduated": false
+    },
+    {
+      "name": "松本 和子",
+      "romaji": "MATSUMOTO Wako",
+      "graduated": false
+    },
+    {
+      "name": "目黒 陽色",
+      "romaji": "MEGURO Hiiro",
+      "graduated": false
+    },
+    {
+      "name": "山川 宇衣",
+      "romaji": "YAMAKAWA Ui",
+      "graduated": false
+    },
+    {
+      "name": "山田 桃実",
+      "romaji": "YAMADA Momomi",
+      "graduated": false
+    }
+  ],
   "H1": [
     {
       "name": "東村 芽依",
@@ -844,7 +891,7 @@
     },
     {
       "name": "森本 茉莉",
-      "romaji": "MORIMOTO Mari",
+      "romaji": "MORIMOTO Marie",
       "graduated": false
     },
     {

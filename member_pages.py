@@ -22,8 +22,8 @@ with open("members.json") as f:
         os.makedirs("app/" + name, exist_ok=True)
         subprocess.run(["cp", "app/Nogizaka46.tsx", "app/" + name + "/page.tsx"])
 
-    members_S = []
-    for index in ["S1", "S2", "S3"]:
+    members_S = ["sakurazaka46-yonkisei"]
+    for index in ["S1", "S2", "S3", "S4"]:
         for member in members[index]:
             members_S.append(member["romaji"])
     for member in members_S:
