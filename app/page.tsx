@@ -123,7 +123,7 @@ export default function Home() {
             </details>
 
             <details>
-                <summary className="text-2xl text-blue-800">四期生</summary>
+                <summary className="text-2xl text-pink-800">四期生</summary>
                 <a href="./sakurazaka46-yonkisei" className="text-pink-300 hover:text-pink-500 font-semibold">四期生リレー<br /></a>
                 {members["S4"].map((member_entry, index) => (
                     <a key={index} href={generateUrl(member_entry.romaji)} className={`font-semibold ${member_entry.graduated ? 'text-gray-600 hover:text-gray-800' : 'text-pink-300 hover:text-pink-500'}`}>
